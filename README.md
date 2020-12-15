@@ -1,4 +1,19 @@
-# nbdev template
+# Unpickler
+> Small library to help with pickle issues
 
-Use this template to more easily create your nbdev project.
 
+## Install
+
+`pip install unpickler`
+
+## How to use
+
+Ever run into a situation (perhaps running PyTorch inference on a server) where you can't import a module despite it being defined in your `lib`? This library fixes that through a custom unpickler:
+> for our example we will use fastai's `load_learner`
+
+```python
+from unpickler.core import UnpicklerModule
+from fastai.learner import load_learner
+
+load_learner('export.pkl', pickle_module=UnpicklerModule)
+```

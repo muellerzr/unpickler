@@ -5,7 +5,7 @@ __all__ = ['get_files', 'UnpicklerModule']
 # Cell
 from fastcore.xtras import Path
 from fastcore.foundation import L
-from fastcore.basics import setify
+from fastcore.basics import setify, store_attr
 from fastcore.meta import delegates
 
 from importlib import import_module
@@ -58,7 +58,7 @@ def _try_import(path, name):
 
 # Cell
 class UnpicklerModule(pickle.Unpickler):
-    "Custom unpickler class for getting classes from a custom library"
+    "Custom unpickler class for getting classes from a custom library."
     @delegates(pickle.Unpickler)
     def __init__(self, lib_path:Path=Path('.'), **kwargs):
         store_attr()

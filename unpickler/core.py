@@ -3,11 +3,10 @@
 __all__ = ['get_files', 'UnpicklerModule']
 
 # Cell
-from fastcore.all import *
-# from fastcore.xtras import Path
-# from fastcore.foundation import L
-# from fastcore.basics import setify
-# from fastcore.meta import delegates
+from fastcore.xtras import Path
+from fastcore.foundation import L
+from fastcore.basics import setify
+from fastcore.meta import delegates
 
 from importlib import import_module
 
